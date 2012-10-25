@@ -19,7 +19,7 @@ my\_middleman は 静的サイト・ジェネレータ [Middleman](https://githu
 - CSS 管理ディレクトリを stylesheets から css へ変更
 - JavaScript 管理ディレクトリを javascripts から js へ変更
 - helpers ディレクトリ以下にPageヘルパを用意しメソッドを実装
-
+- middleman-livereloadによってブラウザの自動リロードに対応
 
 ## 使い方
 
@@ -36,6 +36,11 @@ middleman を使用するには Ruby の開発環境が必要です。
 - bundle install --path vendor/bundler
 - bundle exec middleman server
 
+#### ブラウザ設定
+
+ファイル変更時にブラウザを自動リロードさせるには拡張をインストールする必要があります。    
+詳細: [How do I install and use browser extensions](http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-)
+
 ### 基本操作
 
 - サーバ起動: bundle exec middleman (server) // _server_ を付けなくてもOK 
@@ -45,6 +50,10 @@ middleman に用意されているコマンドは _init_, _server_, _build_ の3
 bundler経由で処理を行うため, _bundle exec middleman COMMAND_ で実行する必要があります。
 
 このリポジトリを使用することで, 実際に使用するコマンドは2つに限定されます。
+
+#### livereload による自動リロード
+
+ブラウザの設定が正しく行われていれば middleman 上のファイルに変更があった場合, 自動的にリロードされます。
 
 ### 命名規則
 

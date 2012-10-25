@@ -15,8 +15,13 @@
 # Page options, layouts, aliases and proxies
 ###
 
+# Slim settings
 # Set slim-lang output style
 Slim::Engine.set_default_options :pretty => true
+# Set Shortcut
+Slim::Engine.set_default_options :shortcut => {'&' => 'input type', '#' => 'id', '.' => 'class'}
+# Don't display Error: slim has error > 1.3.0
+Slim::Engine.disable_option_validator!
 
 # Per-page layout changes:
 #
@@ -55,6 +60,10 @@ set :css_dir, 'css'
 set :js_dir, 'js'
 
 set :images_dir, 'images'
+
+# livereload your browser, Firefox/Google Chrome/Safari
+activate :livereload
+
 
 # Build-specific configuration
 configure :build do
