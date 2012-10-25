@@ -1,9 +1,7 @@
 # my\_middleman powered by Middleman
 
-my\_middleman は 静的サイト・ジェネレータ [Middleman](https://github.com/middleman/middleman) 
-のテンプレートエンジンを [slim](https://github.com/stonean/slim) に設定したもの
-です。提携するマークアップエンジニアさんやコーダーさんと同じ環境で作業できるよう
-に github で管理しています。
+my\_middleman は 静的サイト・ジェネレータ [Middleman](https://github.com/middleman/middleman) のテンプレートエンジンを [slim](https://github.com/stonean/slim) に設定したものです。  
+提携するマークアップエンジニアさんやコーダーさんと同じ環境で作業できるように github で管理しています。
 
 ## メリット
 
@@ -33,6 +31,7 @@ middleman を使用するには Ruby の開発環境が必要です。
 - gem install middleman 
 - mkdir PROJECT\_DIR
 - cd PROJECT\_DIR
+- git init
 - git pull git://github.com/yterajima/my\_middleman.git 
 - bundle install --path vendor/bundler
 - bundle exec middleman server
@@ -43,18 +42,15 @@ middleman を使用するには Ruby の開発環境が必要です。
 - HTML の生成: bundle exec middleman build
 
 middleman に用意されているコマンドは _init_, _server_, _build_ の3種類。  
-bundler経由で処理を行うため, _bundle exec middleman COMMAND_ で実行する必要があり
-ます。
+bundler経由で処理を行うため, _bundle exec middleman COMMAND_ で実行する必要があります。
 
 このリポジトリを使用することで, 実際に使用するコマンドは2つに限定されます。
 
 ### 命名規則
 
-- html を slim で作成する場合, middleman では _filename.html.slim_ として保存
+- html を slim で作成する場合, _filename.html.slim_ として保存
 - css を scss で作成する場合, _filename.css.scss_ として css ディレクトリに保存
-- JavaScript を CoffeeScript で作成する場合, _filename.js.coffee_ として js ディ
-  レクトリに保存
-
+- JavaScript を CoffeeScript で作成する場合, _filename.js.coffee_ として js ディレクトリに保存
 
 ## 参考
 
