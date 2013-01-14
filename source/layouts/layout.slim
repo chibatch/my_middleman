@@ -10,7 +10,7 @@ html
     /! Use title if it's in the page YAML frontmatter
     title #{title} || "The Middleman"
 
-    == stylesheet_link_tag "normalize", "template"
+    == stylesheet_link_tag "normalize", "template", :media => "all"
 
   body
     header

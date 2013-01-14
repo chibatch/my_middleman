@@ -63,11 +63,6 @@
     margin: 0 auto
     padding-top: 15px
     @include clearfix
-  #sidebar
-    float: left
-    width: 290px
-    line-height: 2
-    padding-right: 10px
   #content
     width: 680px
     float: right
@@ -91,7 +86,7 @@
     h6
       font-size: 11.5pt
     p
-      text-indent: 1em
+      text-indent: 0.65em
       padding-bottom: 10px
     hr
       height: 0
@@ -151,6 +146,15 @@
         border-top: 5px solid #666
     td.t_top
       border-top: 5px solid #afafaf
+  #sidebar
+    float: left
+    width: 290px
+    line-height: 2
+    padding-right: 10px
+    nav
+      ul, ol
+        margin-top: 0
+        padding-left: 20px
 
 @media print
   body
@@ -177,8 +181,9 @@
       page-break-inside: avoid
     p, div, pre, blockquote, ul, ol, table
       font-size: 9pt
-    p, div
-      padding: 0 0 10px 1em
+    p
+      text-indent: 0.65em
+      padding-bottom: 10px
     hr
       height: 0
       margin: 5px 0 30px 1em
