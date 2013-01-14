@@ -1,0 +1,237 @@
+@mixin line-shadow($color)
+  -webkit-box-shadow: 0 1px 0 $color
+  -moz-box-shadow: 0 1px 0 $color
+  box-shadow: 0 1px 0 $color
+
+@mixin header-gradient
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(1, #e0e0e0), color-stop(0, #b6b6b6))
+  background: -webkit-linear-gradient(#b6b6b6, #e0e0e0)
+  background: -moz-linear-gradient(#b6b6b6, #e0e0e0)
+  background: linear-gradient(#b6b6b6, #e0e0e0)
+
+@mixin footer-gradient
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.88, #ccc), color-stop(0, #999))
+  background: -webkit-linear-gradient(top, #999 0%, #ccc 88%)
+  background: -moz-linear-gradient(top, #999 0%, #ccc 88%)
+  background: linear-gradient(to bottom, #999 0%, #ccc 88%)
+
+@mixin clearfix
+  &:after
+    content: "."
+    display: block
+    height: 0
+    clear: both
+    visibility: hidden
+
+@media screen
+  body
+    line-height: 1.4
+    background: #f7f7f7
+    font-size: 12pt
+    font-family: "メイリオ", "ＭＳ Ｐゴシック", sans-serif
+    color: #333
+    letter-spacing: 1px
+  a
+    text-decoration: underline
+    &:link
+      color: #4c72f2
+    &:visited
+      color: #00468c
+    &:hover, &:active
+      color: #00bfff
+  body
+    > header
+      height: 60px
+      text-align: left
+      padding: 10px 0 5px
+      @include header-gradient
+      div
+        width: 980px
+        margin: 0 auto
+      h1
+        font-size: 20pt
+    > footer
+      width: 100%
+      height: 35px
+      margin-top: 30px
+      padding-top: 10px
+      text-align: center
+      color: #fff
+      @include footer-gradient
+  #container
+    width: 980px
+    margin: 0 auto
+    padding-top: 15px
+    @include clearfix
+  #sidebar
+    float: left
+    width: 290px
+    line-height: 2
+    padding-right: 10px
+  #content
+    width: 680px
+    float: right
+    margin-top: 0
+    h1, h2, h3, h4, h5, h6
+      font-weight: bold
+      margin: 0 0 5px 0
+    h1
+      font-size: 16pt
+    h2
+      font-size: 13.5pt
+    h3
+      font-size: 13pt
+      padding-bottom: 9px
+      border-bottom: 2px solid #ccc
+      @include line-shadow(#e4e4e4)
+    h4
+      font-size: 12.5pt
+    h5
+      font-size: 12pt
+    h6
+      font-size: 11.5pt
+    p
+      text-indent: 1em
+      padding-bottom: 10px
+    hr
+      height: 0
+      margin: 5px 0 30px 1em
+      border: none
+      border-top: 2px solid #ccc
+      border-bottom: 1px solid #e4e4e4
+    pre
+      width: 610px
+      margin: 0 0 30px 1em
+      padding: 25px
+      border: 1px solid #ccc
+      border-radius: 5px
+      code
+        color: #444
+        font-family: monospace,sans-serif
+    blockquote
+      margin: 0 0 30px 2em
+      padding-left: 5px
+      border-left: 6px solid #ccc
+    ul
+      margin: 0 0 30px 1em
+      line-height: 1.8
+      li
+        list-style-type: disc
+      ul
+        margin: 0
+        padding-left: 1em
+        margin-bottom: 0.5em
+        li
+          list-style-type: circle
+          &:first-child
+            padding-top: 0.2em
+        ul
+          padding-left: 2em
+          li
+            list-style-type: disc
+    ol
+      line-height: 1.8
+      margin: 0 0 30px 1em
+      li
+        list-style-type: decimal
+        &:first-child
+          padding-top: 0.2em
+    table
+      width: 100%
+      margin-bottom: 30px
+      border-collapse: collapse
+    th, td
+      text-align: left
+      padding: 10px
+      border: 1px solid #ccc
+    th
+      font-weight: normal
+      background: #eaeaea
+      &.t_top
+        border-top: 5px solid #666
+    td.t_top
+      border-top: 5px solid #afafaf
+
+@media print
+  body
+    > header, > footer, #sidebar
+      display: none
+  #content
+    width: 680px
+    margin-top: 0
+    background: #fff
+    h1, h2, h3, h4, h5, h6
+      font-weight: bold
+      margin: 0 0 5px 0
+    h1
+      font-size: 14pt
+    h2, h3
+      font-size: 13pt
+    h3
+      padding-bottom: 9px
+      border-bottom: 2px solid #ccc
+      @include line-shadow(#e4e4e4)
+    h4, h5, h6
+      font-size: 11pt
+    pre, blockquote, ul, ol, table
+      page-break-inside: avoid
+    p, div, pre, blockquote, ul, ol, table
+      font-size: 9pt
+    p, div
+      padding: 0 0 10px 1em
+    hr
+      height: 0
+      margin: 5px 0 30px 1em
+      border: none
+      border-top: 2px solid #ccc
+      border-bottom: 1px solid #e4e4e4
+    pre
+      width: 610px
+      margin: 0 0 30px 1em
+      padding: 25px
+      border: 1px solid #ccc
+      border-radius: 5px
+      code
+        color: #444
+        font-family: monospace,sans-serif
+    blockquote
+      margin: 0 0 30px 2em
+      padding-left: 5px
+      border-left: 6px solid #ccc
+    ul
+      line-height: 1.8
+      margin: 0 0 30px 1em
+      li
+        list-style-type: disc
+      ul
+        margin: 0
+        padding-left: 1em
+        li
+          list-style-type: circle
+          &:first-child
+          padding-top: 0.3em
+        ul li
+          list-style-type: disc
+    ol
+      line-height: 1.8
+      margin: 0 0 30px 1em
+      li
+        list-style-type: decimal
+        &:first-child
+        padding-top: 0.3em
+    table
+      width: 100%
+      margin-bottom: 30px
+      border-collapse: collapse
+      th, td
+        padding: 10px
+        border: 1px solid #ccc
+        background: #fff
+        font-weight: bold
+        text-align: left
+      th
+        font-weight: bold
+        &.t_top
+          border-top: 5px solid #666
+      td.t_top
+        border-top: 5px solid #afafaf
