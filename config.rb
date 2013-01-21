@@ -19,9 +19,11 @@
 # Set slim-lang output style
 Slim::Engine.set_default_options :pretty => true
 # Set Shortcut
-Slim::Engine.set_default_options :shortcut => {'&' => 'input type', '#' => 'id', '.' => 'class'}
-# Don't display Error: slim has error > 1.3.0
-Slim::Engine.disable_option_validator!
+Slim::Engine.set_default_options :shortcut => {
+  '#' => {:tag => 'div', :attr => 'id'},
+  '.' => {:tag => 'div', :attr => 'class'},
+  '&' => {:tag => 'input', :attr => 'type'}
+}
 
 # Per-page layout changes:
 #
